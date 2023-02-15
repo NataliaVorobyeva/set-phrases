@@ -21,7 +21,16 @@ Route::get('/inspirate', function () {
     return view('landing');
 });
 
+Route::get('/user', function () {
+    return view('dashboarduser');
+});
 
-Auth::routes();
+Route::get('/userlogin', function () {
+    return view('user-login');
+});
+
+Route::get('/signin', function () {
+    return view('user-signin');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
