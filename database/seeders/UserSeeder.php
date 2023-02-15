@@ -14,6 +14,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('user')->insert([ 
+            'role' => 'admin',
+            'name' => 'Natalia',
+            'surname' => 'Vorobyeva',
+            'nick' => 'Nati',
+            'email' => 'nati@gmail.com',
+            'password' => 123456,
+            
+         ]); 
     }
 }

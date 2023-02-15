@@ -14,6 +14,11 @@ class LikeSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('likes')->insert([ 
+            'user_id' => 1,
+            'frase_id' => 1,
+            
+            
+         ]); 
     }
 }
