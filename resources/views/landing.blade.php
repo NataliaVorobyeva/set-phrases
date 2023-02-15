@@ -9,6 +9,7 @@
 </head>
 <body>
     <header>
+
         <div class="px-3 py-2 bg-danger bg-gradient text-white">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
             <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
@@ -33,12 +34,15 @@
                 Dashboard
               </a>
             </li>
-          </ul>
+          </ul>     
+
           <div class="text-end">
             <button type="button" class="btn btn-light text-dark me-2">Login</button>
             <button type="button" class="btn btn-primary">Sign-up</button>
           </div>
-        </div>
+
+        </div> 
+  
     </header>
 
     <div class ="cont-max">
