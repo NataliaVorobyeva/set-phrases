@@ -44,8 +44,8 @@
             <p class="card-text">Author</p>
             </div>
             <div class="card-body d-flex justify-content-around">
-                <a href="#" class="btn btn-primary">Borrar</a>
-                <a href="#" class="btn btn-primary">Editar</a>
+                <a href="#" class="btn btn-primary">Like</a>
+                <a href="#" class="btn btn-primary">Dislike</a>
             </div>
         </div>
 
