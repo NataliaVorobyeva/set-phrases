@@ -7,6 +7,8 @@ Route::view('/','landing')->name('inspirate');
 
 Route::view('/user','dashboarduser')->name('dashuser');
 
+Route::view('/admin','dashboardadmin')->name('dashadmin');
+
 Route::view('/userlogin','user-login')->name('loginuser');
 
 Route::view('/signin','user-signin')->name('signinuser');
