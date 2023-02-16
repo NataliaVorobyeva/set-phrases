@@ -1,3 +1,4 @@
+  <hr class="featurette-divider">
   <footer class="container">
     <p class="float-end"><a href="#">Back to top</a></p>
     <p>&copy; 2022 Inspirate, Inc. </p>

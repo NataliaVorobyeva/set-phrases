@@ -1,6 +1,6 @@
-@include('header')
-<h2>Dashboard del usuario</h2>
-@include('carrousel')
+@extends('layouts.template')
+
+@section('content')
 <ul class="nav nav-pills">
     <li class="nav-item">
       <a class="nav-link active" aria-current="page" href="#">Librería de frases</a>
@@ -12,9 +12,7 @@
       </ul>
     </li>
   </ul>
-  <h4>Contenedor de frases</h2>
     <div class="container-md d-flex justify-content-around">
-
         <div class="card text-white" style="width: 18rem;">
             <img class="card-img" src="{{URL::asset('/imgs/fondo-exemple.webp')}}" alt="Card image">
             <div class="card-img-overlay">
@@ -62,7 +60,6 @@
                 <a href="#" class="btn btn-primary">Editar</a>
             </div>
         </div>
-
     </div>
 </main>
-@include('footer')
+@endsection
