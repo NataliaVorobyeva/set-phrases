@@ -1,12 +1,10 @@
     <footer>
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img src="../imgs/logo1.jpeg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-            Bootstrap
-          </a>
+      <footer class="footer mt-auto py-3 bg-danger bg-gradient">
+        <div class="container d-flex flex-column ">
+          <span class="text-muted">Tus frases inspiradoras Coorp.</span>
+          <span class="text-muted"><small>Calle de los Remedios 111. España.</span></span>
         </div>
-      </nav>
+      </footer>
     </footer>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
