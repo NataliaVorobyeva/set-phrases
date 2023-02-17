@@ -1,12 +1,65 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h2>dashboard user</h2>
-</body>
-</html>
+@extends('layouts.template')
+
+@section('content')
+<ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="#">Librería de frases</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Mis Frases</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Mis Likes</a></li>
+      </ul>
+    </li>
+  </ul>
+    <div class="container-md d-flex justify-content-around">
+        <div class="card text-white" style="width: 18rem;">
+            <img class="card-img" src="{{URL::asset('/imgs/fondo-exemple.webp')}}" alt="Card image">
+            <div class="card-img-overlay">
+            <h5 class="card-title">Some representative placeholder content for the first slide of the carousel.</h5>
+            <p class="card-text">Author</p>
+            </div>
+            <div class="card-body d-flex justify-content-around">
+                <a href="#" class="btn btn-primary">Borrar</a>
+                <a href="#" class="btn btn-primary">Editar</a>
+            </div>
+        </div>
+
+        <div class="card text-white" style="width: 18rem;">
+            <img class="card-img" src="{{URL::asset('/imgs/fondo-exemple.webp')}}" alt="Card image">
+            <div class="card-img-overlay">
+            <h5 class="card-title">Some representative placeholder content for the first slide of the carousel.</h5>
+            <p class="card-text">Author</p>
+            </div>
+            <div class="card-body d-flex justify-content-around">
+                <a href="#" class="btn btn-primary">Borrar</a>
+                <a href="#" class="btn btn-primary">Editar</a>
+            </div>
+        </div>
+
+        <div class="card text-white" style="width: 18rem;">
+            <img class="card-img" src="{{URL::asset('/imgs/fondo-exemple.webp')}}" alt="Card image">
+            <div class="card-img-overlay">
+            <h5 class="card-title">Some representative placeholder content for the first slide of the carousel.</h5>
+            <p class="card-text">Author</p>
+            </div>
+            <div class="card-body d-flex justify-content-around">
+                <a href="#" class="btn btn-primary">Like</a>
+                <a href="#" class="btn btn-primary">Dislike</a>
+            </div>
+        </div>
+
+        <div class="card text-white" style="width: 18rem;">
+            <img class="card-img" src="{{URL::asset('/imgs/fondo-exemple.webp')}}" alt="Card image">
+            <div class="card-img-overlay">
+            <h5 class="card-title">Some representative placeholder content for the first slide of the carousel.</h5>
+            <p class="card-text">Author</p>
+            </div>
+            <div class="card-body d-flex justify-content-around">
+                <a href="#" class="btn btn-primary">Borrar</a>
+                <a href="#" class="btn btn-primary">Editar</a>
+            </div>
+        </div>
+    </div>
+</main>
+@endsection
