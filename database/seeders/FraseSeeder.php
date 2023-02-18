@@ -71,10 +71,11 @@ class FraseSeeder extends Seeder
        
     ]);
     DB::table('frases')->insert([ 
-       'text' => '“Existe   algo   dentro   que   es   más   grande   que   cualquier
-       obstáculo.”',
+       'text' => '“En cada obstáculo que me he tropezado en la vida, mi
+       cerebro inmediatamente me decía: ¿Dónde está escondido el lado
+       positivo?”',
        'image' => 'https://tse3.mm.bing.net/th?id=OIP.qkVc2RNRvdTsqRU_tP4vVgAAAA&pid=Api&P=0',
-       'author' => 'Cristian Larson',
+       'author' => 'Sara Blakely',
        
     ]);
     DB::table('frases')->insert([ 
@@ -112,10 +113,11 @@ class FraseSeeder extends Seeder
        
     ]);
     DB::table('frases')->insert([ 
-       'text' => '“Existe   algo   dentro   que   es   más   grande   que   cualquier
-       obstáculo.”',
+       'text' => '“Cuando me atrevo a ser poderosa y a usar mi fuerza al
+       servicio de mi visión, entonces cada vez me importa menos tener
+       miedo”',
        'image' => 'https://tse1.mm.bing.net/th?id=OIP.9XETu_YqNVjjHiWgD8UoygHaEK&pid=Api&P=0',
-       'author' => 'Cristian Larson',
+       'author' => 'Audre Lorde',
        
     ]);
     DB::table('frases')->insert([ 
