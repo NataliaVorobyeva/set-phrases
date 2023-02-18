@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\Route;
 Route::view('/','landing')->name('inspirate');
 
 Route::view('/user','dashboarduser')->name('dashuser');
-
-Route::view('/admin','dashboardadmin')->name('dashadmin');
 
 Route::view('/login','user-login')->name('loginuser');
 
@@ -21,3 +19,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::prefix('admin')->middleware('auth')->group(function(){
+    //Rutas del DELETE UPDATE//
+Route::view('/','dashboardadmin')->name('dashadmin');
+});
