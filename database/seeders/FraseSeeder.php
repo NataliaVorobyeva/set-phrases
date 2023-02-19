@@ -25,7 +25,7 @@ class FraseSeeder extends Seeder
            'text' => '“Los grandes actos se componen de pequeñas obras hechas día a
            día.”',
            'image' => 'https://tse1.mm.bing.net/th?id=OIP.JIzB5xSlgZHnZ3o-rZjnlQAAAA&pid=Api&P=0',
-           'author' => ' Lao Tzu',
+           'author' => 'Lao Tzu',
            
         ]);
     
@@ -43,8 +43,7 @@ class FraseSeeder extends Seeder
        
     ]);
     DB::table('frases')->insert([ 
-       'text' => '“Existe   algo   dentro   que   es   más   grande   que   cualquier
-       obstáculo.”',
+       'text' => '“Existe algo dentro que es más grande que cualquier obstáculo.”',
        'image' => 'https://tse3.mm.bing.net/th?id=OIP.eaHB5C5EZVj_HxMlqhWalQAAAA&pid=Api&P=0',
        'author' => 'Cristian Larson',
        
@@ -64,8 +63,7 @@ class FraseSeeder extends Seeder
        
     ]);
     DB::table('frases')->insert([ 
-       'text' => '“Cada mañana, como el sol, nacemos de nuevo. Lo que hacemos
-       hoy es lo que más importa.”',
+       'text' => '“Cada mañana, como el sol, nacemos de nuevo. Lo que hacemos hoy es lo que más importa.”',
        'image' => 'https://tse4.mm.bing.net/th?id=OIP.7KG6X2oVqTRes1gfhzylbQAAAA&pid=Api&P=0',
        'author' => 'Buda',
        
