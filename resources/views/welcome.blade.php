@@ -8,7 +8,7 @@
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 ">
             @foreach ($frases as $frase)
                 
-            <div class="col card text-white g-5 shadow">
+            <div class="col card text-white shadow m-3">
                 <img class="card-img object-fit-cover" src="{{$frase->image}}" alt="Background image">
                 <div class="card-img-overlay overflow-y-scroll">
                 <h4 class="card-title fw-bolder shadow-sm">{{$frase->text}}</h4>
