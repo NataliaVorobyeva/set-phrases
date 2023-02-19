@@ -22,6 +22,6 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(FraseSeeder::class);
         $this->call(LikeSeeder::class);
-        $this->call(UserSeeder::class);
+    
     }
 }
