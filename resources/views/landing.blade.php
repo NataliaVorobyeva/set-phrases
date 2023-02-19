@@ -1,5 +1,7 @@
 @extends('layouts.template')
 
+@section('title','Inspirate - Home')
+
 @section('content')
     <hr class="featurette-divider">
     <main class="container">
