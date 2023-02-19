@@ -1,23 +1,26 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FraseController;
+
+// Version get del home
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('landing');
 // });
 
-Route::view('/','landing')->name('inspirate');
 
-Route::view('/user','dashboarduser')->name('dashuser');
+Route::get('/', [FraseController::class, 'index'])->name('home');
 
-Route::view('/admin','dashboardadmin')->name('dashadmin');
 
-Route::view('/login','user-login')->name('loginuser');
+Route::view('/user','dashboard')->name('dashboard');
 
-Route::view('/signin','user-signin')->name('signinuser');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+// Con esto funciona el login y el register
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::view('/admin','dashboardadmin')->name('dashadmin');
+
+
+
+
+
