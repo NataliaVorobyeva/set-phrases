@@ -17,9 +17,10 @@
         </div>
 
         @endforeach 
-        {{ $frases->links('pagination::bootstrap-4') }}
-
+        
     </main>
-    @include('partials.pagination')
+    <div class="container d-flex mt-4 justify-content-center">
+        {{ $frases->links('pagination::bootstrap-4') }}
+    </div>
 @endsection
 
