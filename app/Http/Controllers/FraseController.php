@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Frase;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class FraseController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-        
+
+    // @return \Illuminate\Http\Response
+
+    public function index() 
     {
-        
+        $frases = Frase::get()->toQuery()->paginate(5);
+
+        return view('welcome', ['frases' => $frases]);
     }
 
     /**
