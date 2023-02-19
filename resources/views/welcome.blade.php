@@ -19,8 +19,6 @@
             @endforeach
             
         </div>
-
-        @endforeach 
         
     </main>
     <div class="container d-flex mt-4 justify-content-center">
