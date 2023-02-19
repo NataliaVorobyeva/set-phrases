@@ -45,7 +45,7 @@
               <ul class="navbar-nav flex-row ms-auto">
                 @guest
                     @if (Route::has('login'))
-                        <li type="button" class="nav-item">
+                        <li type="button" style="color: #9121DB;" class="nav-item" >
                             <a class="btn btn-light text-dark me-2" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                     @endif

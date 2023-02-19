@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/','landing')->name('home');
 
-Route::view('/user','dashboarduser')->name('dashboard');
+Route::view('/user','dashboard')->name('dashboard');
 
 // Con esto funciona el login y el register
 Auth::routes();

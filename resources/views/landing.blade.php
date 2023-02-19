@@ -1,6 +1,8 @@
-@extends('layouts.template')
+@extends('layouts.app')
+
 
 @section('content')
+@include('partials.carrousel')
     <hr class="featurette-divider">
     <main class="container">
         <div class="card bg-dark text-white">
@@ -11,5 +13,6 @@
             </div>
         </div>
     </main>
+    @include('partials.pagination')
 @endsection
 

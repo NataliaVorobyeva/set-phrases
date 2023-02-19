@@ -57,13 +57,13 @@
                     @guest
                         @if (Route::has('login'))
                             <li type="button" class="nav-item">
-                                <a class="btn btn-light text-dark me-2" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="btn btn-outline-primary me-2 " href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                         @endif
     
                         @if (Route::has('register'))
-                            <li type="button" class="nav-item">
-                                <a class="btn btn-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            <li type="button" class="nav-item" >
+                                <a class="btn btn-primary" href="{{ route('register') }}">{{ __('Register') }}</a>
                             </li>
                         @endif
                     @else
@@ -95,7 +95,10 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+@include('partials.footer')
     </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </body>
 </html>
