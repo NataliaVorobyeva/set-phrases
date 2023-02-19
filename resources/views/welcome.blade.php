@@ -11,7 +11,7 @@
             <div class="col card text-white shadow m-3">
                 <img class="card-img object-fit-cover" src="{{$frase->image}}" alt="Background image">
                 <div class="card-img-overlay overflow-y-scroll">
-                <h4 class="card-title fw-bolder shadow-sm">{{$frase->text}}</h4>
+                <h5 class="card-title fw-bolder shadow-sm">{{$frase->text}}</h5>
                 <p class="card-text shadow-sm">{{$frase->author}}</p>
                 </div>
             </div>
