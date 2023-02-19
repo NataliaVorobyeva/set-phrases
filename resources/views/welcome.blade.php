@@ -16,7 +16,8 @@
             </div>
         </div>
 
-        @endforeach
+        @endforeach 
+        {{ $frases->links('pagination::bootstrap-4') }}
 
     </main>
     @include('partials.pagination')
