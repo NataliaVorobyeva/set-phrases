@@ -1,5 +1,4 @@
-<hr class="featurette-divider">
-<div class="container">
+<div class="container d-flex mt-4 justify-content-center">
   <nav aria-label="Page navigation example">
       <ul class="pagination">
         <li class="page-item"><a class="page-link" href="#">Previous</a></li>
