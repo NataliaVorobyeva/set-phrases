@@ -17,12 +17,11 @@
             </div>
 
             @endforeach
+            
         </div>
 
-        @endforeach 
-        {{ $frases->links('pagination::bootstrap-4') }}
-
     </main>
+    {{ $frases->links('pagination::bootstrap-4') }}
     @include('partials.pagination')
 @endsection
 
