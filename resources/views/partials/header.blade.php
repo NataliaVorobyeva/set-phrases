@@ -14,19 +14,19 @@
         <div class="px-3 py-2 bg-danger bg-gradient text-white">
           <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
+              <a href="{{ route('home') }}" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                 <img src="{{URL::asset('/imgs/logo1-remove.png')}}" alt="logo" width="220" height="125">
               </a>
 
               <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
                 <li>
-                  <a href="#" class="nav-link text-white">
+                  <a href="{{ route('home') }}" class="nav-link text-white">
                     <img src="{{URL::asset('/imgs/house.svg')}}" alt="logo" class="bi d-block mx-auto mb-1" width="24" height="24">
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#" class="nav-link text-white">
+                  <a href="{{ route('dashboard') }}" class="nav-link text-white">
                     <img src="{{URL::asset('/imgs/dashboard.svg')}}" alt="logo" class="bi d-block mx-auto mb-1" width="24" height="24">
                     Dashboard
                   </a>
@@ -42,21 +42,17 @@
               <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
             </form>
             <div class="text-end">
-              <button type="button" class="btn btn-light text-dark me-2">Login</button>
-              <button type="button" class="btn btn-dark">Sign-up</button>
-            
-              <ul class="navbar-nav ms-auto">
-                <!-- Authentication Links -->
+              <ul class="navbar-nav flex-row ms-auto">
                 @guest
                     @if (Route::has('login'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <li type="button" class="nav-item">
+                            <a class="btn btn-light text-dark me-2" href="{{ route('login') }}">{{ __('Login') }}</a>
                         </li>
                     @endif
 
                     @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <li type="button" class="nav-item">
+                            <a class="btn btn-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
                         </li>
                     @endif
                 @else

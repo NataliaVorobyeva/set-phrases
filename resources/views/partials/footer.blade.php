@@ -1,5 +1,5 @@
   <hr class="featurette-divider">
-  <footer class="container">
+  <footer class="footer mt-auto container">
     <p class="float-end"><a href="#">Back to top</a></p>
     <p>&copy; 2022 Inspirate, Inc. </p>
   </footer>
