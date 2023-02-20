@@ -5,27 +5,29 @@
 @section('content')
 
 <form class="container p-2 border border-danger">
+@csrf
+
     <div class="container pb-4">
-        <p class="mb-3 border-bottom border-danger">Add new quote</p>
+        <p class="mb-3 border-bottom border-danger">Update quote</p>
 
         <div class="col-md-6">
             <label class="form-label">Text</label>
-            <input type="text" class="form-control" required>
+            <input type="text" class="form-control" required value="{{ $frase->text}}">
         </div>
 
         <div class="col-md-6">
             <label class="form-label">Author</label>
-            <input type="text" class="form-control" required>
+            <input type="text" class="form-control" required value="{{ $frase->author}}">
         </div>
 
         <div class="col-md-6">
             <label class="form-label">Image URL</label>
-            <input type="text" class="form-control" required>
+            <input type="text" class="form-control" required value="{{ $frase->image}}">
         </div>
     </div>
 
     <div class="container d-flex justify-content-center" >
-        <button type="submit" class="btn btn-danger">Add</button>
+        <button type="submit" class="btn btn-danger">Update</button>
     </div>
   </form>
 
