@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $frases = Frase::get()->toQuery()->paginate(8);
+        $frases = Frase::get()->toQuery()->paginate(9);
         return view('home-user', ['frases' => $frases]);
     }
 

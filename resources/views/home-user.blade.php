@@ -12,22 +12,24 @@
           </li>
     </ul>
 
-    <div class="container d-flex justify-content-around">
+    <main class="d-flex justify-content-center">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-auto grid justify-content-center gap-4">
 
-        @foreach ($frases as $frase)
-            <div class="card col-12 col-lg-4 col-md-6 text-white border-primary" style="filter: drop-shadow(0px 4px 4px rgba(145, 33, 219, 0.5));">
-                <img class="card-img fit-content p-0 m-0 w-100" src="{{$frase->image}}" alt="Background image">
-                <div class="card-img-overlay overflow-y-scroll" style="text-shadow: 0px 0px 4px #000000;">
-                    <h5 class="card-title fw-bolder" >{{$frase->text}}</h5>
-                    <p class="card-text">{{$frase->author}}</p>
-                    <a class="" {{-- onclick="add({{ $res->driver_id }});" --}}role="button" > 
-                        <img src="{{URL::asset('/imgs/hearth.svg')}}" alt="logo" class="bi d-block mx-auto" width="35" height="35"> 
-                    </a>
+            @foreach ($frases as $frase)
+                <div class="card-group col-10 col-lg-3 col-md-4 text-white" style="filter: drop-shadow(0px 4px 4px rgba(145, 33, 219, 0.5)); border: 2px solid #9121DB; border-radius: 8px; padding: 0; overflow: hidden;">
+                    <img class="card-img w-100" src="{{$frase->image}}" alt="Background image">
+                    <div class="card-img-overlay overflow-y-scroll m-4 mt-2" style="text-shadow: 0px 0px 4px #000000;">
+                        <a class="" {{-- onclick="add({{ $exemple->driver_id }});" --}} role="button" > 
+                            <img src="{{URL::asset('/imgs/hearth.svg')}}" alt="logo" class="bi d-block mx-auto" width="35" height="35"> 
+                        </a>
+                        <h5 class="card-title fw-bolder mb-2" >{{$frase->text}}</h5>
+                        <p class="card-text m-0">{{$frase->author}}</p>
+                    </div>
                 </div>
-            </div>
-        @endforeach
+            @endforeach
 
-    </div>
+        </div>
+    </main>
 
 </div>
 <div class="container d-flex mt-4 justify-content-center">
