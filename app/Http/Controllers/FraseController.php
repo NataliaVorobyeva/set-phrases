@@ -42,8 +42,8 @@ class FraseController extends Controller
      */
     public function store(Request $request)
     {
-        $frases = request()-> except('_token');
-        Frase::insert($frases);
+        $frase = request()-> except('_token');
+        Frase::insert($frase);
 
         return redirect()->route('frase.store');
         
@@ -58,7 +58,7 @@ class FraseController extends Controller
      */
     public function show()
     {
-        $frases = Frase::get()->toQuery()->paginate(5);
+        $frases = Frase::get()->toQuery()->paginate(8);
         return view('frase.dash',['frases' => $frases]);
     }
 
@@ -70,7 +70,8 @@ class FraseController extends Controller
      */
     public function edit($id)
     {
-        return view('frase.edit');
+        $frase=Frase::findOrFail($id);
+        return view('frase.edit',compact('frase') );
     }
 
     /**
@@ -80,9 +81,13 @@ class FraseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
-        //
+        $datosFrase = request()->except(['_token','_method']);
+        Frase::where('id','=',$id)->update($datosFrase);
+
+        $frase=Frase::findOrFail($id);
+        return view('frase.edit', compact('frase'));
     }
 
     /**
@@ -93,6 +98,7 @@ class FraseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Frase::destroy($id);
+        return redirect('/frase/show');
     }
 }
