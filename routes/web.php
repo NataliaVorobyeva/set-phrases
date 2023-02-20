@@ -13,9 +13,9 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [FraseController::class, 'index'])->name('welcome');
 
-Route::get('/frase/show', [FraseController::class,'show'])->name('dashAdmin');
-Route::get('/frase/create', [FraseController::class,'create'])->name('phrCreate');
-Route::get('/frase/update', [FraseController::class,'edit'])->name('phrEdit');
+// Route::get('/frase/show', [FraseController::class,'show'])->name('dashAdmin');
+// Route::get('/frase/create', [FraseController::class,'create'])->name('phrCreate');
+// Route::get('/frase/update', [FraseController::class,'edit'])->name('phrEdit');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home-user')->middleware('auth');
 
@@ -28,7 +28,14 @@ Auth::routes();
 
 // Route::view('/admin','dashboardadmin')->name('dashadmin');
 
+Route::prefix('frase')->middleware('auth', 'isAdmin')->group(function(){
 
+    
+    Route::get('/', [FraseController::class,'show'])->name('dashAdmin');
+    Route::get('/create', [FraseController::class,'create'])->name('phrCreate');
+    Route::get('/update', [FraseController::class,'edit'])->name('phrEdit');
+
+});
 
 
 
