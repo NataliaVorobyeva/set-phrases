@@ -14,7 +14,7 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('home') }}" class="nav-link text-white">
+            <a href="{{ route('home-user') }}" class="nav-link text-white">
               <img src="{{URL::asset('/imgs/dashboard.svg')}}" alt="logo" class="bi d-block mx-auto mb-1" width="24" height="24">
               Dashboard
             </a>
