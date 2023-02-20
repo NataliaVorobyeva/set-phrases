@@ -71,7 +71,7 @@ class FraseController extends Controller
     public function edit($id)
     {
         $frase=Frase::findOrFail($id);
-        return view('frase.edit');
+        return view('frase.edit',compact('frase') );
     }
 
     /**
@@ -83,7 +83,11 @@ class FraseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $datosFrase = request()->except(['_token','_method']);
+        Frase::where('id','=',$id)->update($datosFrase);
+
+        $frase=Frase::findOrFail($id);
+        return view('frase.edit',compact('frase') );
     }
 
     /**
