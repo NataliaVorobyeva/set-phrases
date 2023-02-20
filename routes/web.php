@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FraseController;
+use App\Http\Controllers\HomeController;
 
 // Version get del home
 
@@ -10,13 +11,14 @@ use App\Http\Controllers\FraseController;
 // });
 
 
-Route::get('/', [FraseController::class,'index'])->name('home');
+Route::get('/', [FraseController::class, 'index'])->name('welcome');
 
 Route::get('/frase/show', [FraseController::class,'show'])->name('dashAdmin');
 Route::get('/frase/create', [FraseController::class,'create'])->name('phrCreate');
 Route::get('/frase/update', [FraseController::class,'edit'])->name('phrEdit');
 
-Route::view('/user','dashboard')->name('dashboard');
+Route::get('/home', [HomeController::class, 'index'])->name('home-user')->middleware('auth');
+
 
 // Para generar rutas automáticas, después en terminar hacer php artisan route:list para ver las que se generaron
 Route::resource('frase',FraseController::class);
