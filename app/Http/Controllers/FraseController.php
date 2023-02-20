@@ -13,7 +13,12 @@ class FraseController extends Controller
 
     public function index() 
     {
+<<<<<<< HEAD
         $frases = Frase::get()->toQuery()->paginate(5);
+=======
+        $frases = Frase::get()->toQuery()->paginate(9);
+
+>>>>>>> ee900e4ca3c4c737fd566815bd1b9503fb71e0fe
         return view('welcome', ['frases' => $frases]);
     }
 
