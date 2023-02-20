@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('sliders', function (Blueprint $table) {
             $table->id();
+            $table->integer('frase_id');
             $table->timestamps();
         });
     }
