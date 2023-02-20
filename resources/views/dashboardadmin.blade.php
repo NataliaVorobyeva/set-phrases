@@ -1,5 +1,7 @@
 @extends('layouts.template')
 
+@section('title','Inspirate - Administrador')
+
 @section('content')
 <ul class="nav nav-pills">
     <li class="nav-item">
