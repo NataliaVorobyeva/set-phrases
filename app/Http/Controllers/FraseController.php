@@ -9,10 +9,11 @@ use Illuminate\Http\Request;
 class FraseController extends Controller
 {
 
-    public function __construct()
-    {
-        $this->middleware('auth', ['except' => ['index', 'show']]);
-    }
+    // Gaby esto es para capar alguna funciones del CRUD- ahora solo deja mostrar las frases a traves de la funcion index, el show no esta implementado (pero en principio no lo necesitamos)
+    // public function __construct()
+    // {
+    //     $this->middleware('auth', ['except' => ['index', 'show']]);
+    // }
     // @return \Illuminate\Http\Response
 
     public function index() 
