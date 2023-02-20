@@ -11,6 +11,7 @@ use App\Http\Controllers\FraseController;
 
 
 Route::get('/', [FraseController::class,'index'])->name('home');
+
 Route::get('/frase/show', [FraseController::class,'show'])->name('dashAdmin');
 Route::get('/frase/create', [FraseController::class,'create'])->name('phrCreate');
 Route::get('/frase/update', [FraseController::class,'edit'])->name('phrEdit');
