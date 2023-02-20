@@ -9,11 +9,15 @@ use Illuminate\Http\Request;
 class FraseController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
     // @return \Illuminate\Http\Response
 
     public function index() 
     {
-        $frases = Frase::get()->toQuery()->paginate(5);
+        $frases = Frase::get()->toQuery()->paginate(8);
 
         return view('welcome', ['frases' => $frases]);
     }

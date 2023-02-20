@@ -6,35 +6,30 @@
       <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
 
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption text-start">
-            <h2>1 Some representative placeholder content for the first slide of the carousel.</h2>
+    <div class="carousel-inner" >
+
+      <div class="carousel-item active" style="height: 200px">
+        <img src="{{URL::asset('/imgs/fondo-exemple.webp')}}" class="d-block w-100" alt="Background image">
+          <div class="carousel-caption text-start flex align-content-center justify-content-center" style="text-shadow: 0px 0px 4px #000000;">
+            <h3 class="fw-bolder">Some representative placeholder content for the first slide of the carousel.</h3>
             <p>Federico Garcia Lorca</p>
           </div>
-        </div>
       </div>
 
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption  text-start">
-            <h2>2 Some representative placeholder content for the second slide of the carousel.</h2>
+      <div class="carousel-item" style="height: 200px">
+        <img src="{{URL::asset('/imgs/fondo-exemple.webp')}}" class="d-block w-100" alt="Background image">
+          <div class="carousel-caption text-start flex align-content-center justify-content-center" style="text-shadow: 0px 0px 4px #000000;">
+            <h3 class="fw-bolder">Some representative placeholder content for the second slide of the carousel.</h3>
             <p>Federico Garcia Lorca</p>
           </div>
-        </div>
       </div>
       
-      <div class="carousel-item">
-        <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"/></svg>
-        <div class="container">
-          <div class="carousel-caption  text-start">
-            <h2>3 Some representative placeholder content for the third slide of the carousel.</h2>
+      <div class="carousel-item" style="height: 200px">
+        <img src="{{URL::asset('/imgs/fondo-exemple.webp')}}" class="d-block w-100" alt="Background image">
+          <div class="carousel-caption  text-start flex align-content-center justify-content-center" style="text-shadow: 0px 0px 4px #000000;">
+            <h3 class="fw-bolder">Some representative placeholder content for the third slide of the carousel.</h3>
             <p>Federico Garcia Lorca</p>
           </div>
-        </div>
       </div>
 
     </div>

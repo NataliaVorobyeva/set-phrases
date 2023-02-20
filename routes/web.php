@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FraseController;
+use App\Http\Controllers\HomeController;
 
 // Version get del home
 
@@ -10,10 +11,10 @@ use App\Http\Controllers\FraseController;
 // });
 
 
-Route::get('/', [FraseController::class, 'index'])->name('home');
+Route::get('/', [FraseController::class, 'index'])->name('welcome');
 
 
-Route::view('/user','dashboard')->name('dashboard');
+Route::get('/dashboard',[HomeController::class, 'index'])->name('home')->middleware('auth');
 
 // Con esto funciona el login y el register
 Auth::routes();
