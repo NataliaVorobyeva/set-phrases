@@ -39,9 +39,9 @@ class FraseController extends Controller
         $frases = request()-> except('_token');
         Frase::insert($frases);
 
-        return redirect()
-        ->route('frase.store')
-        ->with('message','Se ha agregado correctamente');  
+        return redirect()->route('frase.store');
+        
+        //->with('message','Se ha agregado correctamente');  
     }
 
     /**
