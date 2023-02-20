@@ -21,11 +21,14 @@
         </div>
         <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
             <a type="button" class="btn btn-outline-dark">Add to Slider</a>
-            <a type="button" class="btn btn-outline-dark">Edit</a>
-            <a type="button" class="btn btn-outline-dark">Delete</a>
-          </div>
+            <a href="{{ url('/frase/'.$frase->id.'/edit') }}" class="btn btn-outline-dark">Update</a>
+            <form action="{{ url('/frase/'.$frase->id) }}" method="post">
+                @csrf
+                {{ method_field('delete') }}
+                <input type="submit"  onclick="return confirm('Please confirm deletion.')" class="btn btn-outline-dark" value="Delete">
+            </form>
+        </div>
     </div>
-
     @endforeach 
     {{ $frases->links('pagination::bootstrap-4') }}
     

@@ -58,7 +58,7 @@ class FraseController extends Controller
      */
     public function show()
     {
-        $frases = Frase::get()->toQuery()->paginate(5);
+        $frases = Frase::get()->toQuery()->paginate(8);
         return view('frase.dash',['frases' => $frases]);
     }
 
@@ -70,6 +70,7 @@ class FraseController extends Controller
      */
     public function edit($id)
     {
+        $frase=Frase::findOrFail($id);
         return view('frase.edit');
     }
 
@@ -93,6 +94,7 @@ class FraseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Frase::destroy($id);
+        return redirect('/frase/show');
     }
 }
