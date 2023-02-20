@@ -4,9 +4,10 @@
 
 @section('content')
 
-<form action="{{ route('frase.update', $frase->id)}}" class="container p-2 border border-danger" method="get">
+<form class="container p-2 border border-danger" action="{{ url('/frase/'.$frase->id) }}" method="post">
     @csrf
-    {{ method_field('patch') }}
+    {{method_field('PATCH') }} 
+
     <div class="container pb-4">
         <p class="mb-3 border-bottom border-danger">Update quote</p>
 

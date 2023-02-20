@@ -42,8 +42,8 @@ class FraseController extends Controller
      */
     public function store(Request $request)
     {
-        $frases = request()-> except('_token');
-        Frase::insert($frases);
+        $frase = request()-> except('_token');
+        Frase::insert($frase);
 
         return redirect()->route('frase.store');
         
@@ -81,13 +81,13 @@ class FraseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request,$id)
     {
         $datosFrase = request()->except(['_token','_method']);
         Frase::where('id','=',$id)->update($datosFrase);
 
         $frase=Frase::findOrFail($id);
-        return view('frase.edit',compact('frase') );
+        return view('frase.edit', compact('frase'));
     }
 
     /**
