@@ -22,8 +22,12 @@
         <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
             <a type="button" class="btn btn-outline-dark">Add to Slider</a>
             <a type="button" class="btn btn-outline-dark">Edit</a>
-            <a type="button" class="btn btn-outline-dark">Delete</a>
-          </div>
+            <form action="">
+
+            </form>
+            <input type="submit"  onclick="return confirm('Please confirm deletion.')" class="btn btn-outline-dark" value="Delete">
+          
+        </div>
     </div>
 
     @endforeach 
