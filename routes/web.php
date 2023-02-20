@@ -17,7 +17,8 @@ Route::get('/frase/show', [FraseController::class,'show'])->name('dashAdmin');
 Route::get('/frase/create', [FraseController::class,'create'])->name('phrCreate');
 Route::get('/frase/update', [FraseController::class,'edit'])->name('phrEdit');
 
-Route::get('/dashboard',[HomeController::class, 'index'])->name('home')->middleware('auth');
+Route::get('/home', [HomeController::class, 'index'])->name('home')->middleware('auth');
+
 
 // Para generar rutas automáticas, después en terminar hacer php artisan route:list para ver las que se generaron
 Route::resource('frase',FraseController::class);
