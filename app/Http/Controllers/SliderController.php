@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\slider;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class SliderController extends Controller
@@ -12,10 +13,14 @@ class SliderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        //
+    public function construct(){
+        $this->middleware(['auth']);
     }
+    public function index(){
+        $sliders = Slider::all();
+        return view('web.admin.slider.index',compact('sliders'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -35,7 +40,24 @@ class SliderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $carpeta = 'storage/img/slider/';
+            if (!file_exists($carpeta)) {
+              File::makeDirectory($carpeta, 0755, true);
+                }
+                $titulo = $request->get('titulo');
+                $descripcion = $request->get('descripcion');
+                $image = $request->file('image');
+                $image_name = $image->getClientOriginalName();
+                $image = Image::make($image)
+                        ->save($carpeta.'/'.$image_name);
+                            $slider = Slider::create([
+                            'titulo' => $titulo,
+                            'descripcion' => $descripcion,
+                            'ruta_img' => $carpeta.$image_name,
+                             'nombre_img' => $image_name,
+                            'created_at' => Carbon::now(),
+                        ]);
+                return back()->with('flash', 'Se agrego un nuevo Slider.');
     }
 
     /**

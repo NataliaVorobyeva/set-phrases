@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(FraseSeeder::class);
         $this->call(LikeSeeder::class);
-        // $this->call(SliderSeeder::class);
+        $this->call(SliderSeeder::class);
     
     }
 }

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FraseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SliderController;
 
 // Version get del home
 
@@ -28,7 +29,14 @@ Auth::routes();
 
 // Route::view('/admin','dashboardadmin')->name('dashadmin');
 
+Route::get("/",[HomeController::class, 'index'])->name('index');
+
+
+Route::group(['prefix'=> 'admin'],function(){
+
+Route::get('Panel-Administrativo', [IndexController::class, 'index'])->name('dashboard');
+Route::resource('slide', SliderController::class)->parameters(['sliders' => 'slider'])->names('admin.slider');
 
 
 
-
+});
