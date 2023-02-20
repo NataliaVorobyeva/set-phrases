@@ -25,7 +25,8 @@ class FraseController extends Controller
      */
     public function create()
     {
-        //
+        return view('frase.create');
+        
     }
 
     /**
@@ -36,7 +37,12 @@ class FraseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $frases = request()-> except('_token');
+        Frase::insert($frases);
+
+        return redirect()->route('frase.store');
+        
+        //->with('message','Se ha agregado correctamente');  
     }
 
     /**
@@ -45,9 +51,10 @@ class FraseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $frases = Frase::get()->toQuery()->paginate(5);
+        return view('frase.dash',['frases' => $frases]);
     }
 
     /**
@@ -58,7 +65,7 @@ class FraseController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('frase.edit');
     }
 
     /**
