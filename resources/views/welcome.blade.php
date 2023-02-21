@@ -5,14 +5,14 @@
     @include('partials.carrousel')
     <hr class="featurette-divider">
     <main class="d-flex justify-content-center">
-        <div class="row grid justify-content-center gap-4">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 grid justify-content-center gap-4 ">
             @foreach ($frases as $frase)
                 
-                <div class="card col-12 col-lg-4 col-md-6 text-white border-primary" style="filter: drop-shadow(0px 4px 4px rgba(145, 33, 219, 0.5));">
-                    <img class="card-img fit-content p-0 m-0 w-100" src="{{$frase->image}}" alt="Background image">
-                    <div class="card-img-overlay overflow-y-scroll" style="text-shadow: 0px 0px 4px #000000;">
-                        <h5 class="card-title fw-bolder" >{{$frase->text}}</h5>
-                        <p class="card-text">{{$frase->author}}</p>
+                <div class="card-group col-10 col-lg-3 col-md-4 text-white" style="filter: drop-shadow(0px 4px 4px rgba(145, 33, 219, 0.5)); border: 2px solid #9121DB; border-radius: 8px; padding: 0; overflow: hidden;">
+                    <img class=" w-100" src="{{$frase->image}}" alt="Background image">
+                    <div class="card-img-overlay overflow-y-scroll m-4" style="text-shadow: 0px 0px 4px #000000;">
+                        <h5 class="card-title fw-bolder mb-2" >{{$frase->text}}</h5>
+                        <p class="card-text m-0">{{$frase->author}}</p>
                     </div>
                 </div>
 

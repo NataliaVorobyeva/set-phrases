@@ -3,32 +3,60 @@
 @section('title','Inspirate - Administrador')
 
 @section('content')
+@include('partials.carrousel')
 
-<div class="d-flex gap-2 pb-3 d-md-flex justify-content-center">
-    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">Quotes</a>
-    <a href="{{ url('/frase/create') }}" class="btn btn-primary" >Add new quote</a>
-</div>
+<div class="mt-5 container d-flex flex-wrap justify-content-center">
+    <ul class="nav nav-pills mb-4">
+        <li class="nav-item">
+            <a href="#" class="btn btn-outline-primary me-2" role="button" data-bs-toggle="button">Quotes</a>
+        </li>
+        <li class="nav-item">
+            <a href="{{ url('/frase/create') }}" class="btn btn-primary" >Add New Quote</a>
+        </li>
+    </ul>
 
-<div class="container">
-    
-    @foreach ($frases as $frase)
-            
-    <div class="card text-white pb-4 ">
-        <img class="card-img" src="{{$frase->image}}" alt="Card image">
-        <div class="card-img-overlay">
-            <h5 class="card-title">{{$frase->text}}</h5>
-            <p class="card-text">{{$frase->author}}</p>
+ 
+    <hr class="featurette-divider">
+
+
+    <main class="d-flex justify-content-center">
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-auto grid justify-content-center gap-4">
+        
+            @foreach ($frases as $frase)
+                    
+            <div class="card-group col-10 col-lg-4 col-md-4 text-white" style="filter: drop-shadow(0px 4px 4px rgba(145, 33, 219, 0.5)); border: 2px solid #9121DB; border-radius: 8px; padding: 0; overflow: hidden;">
+                <img class="card-img w-100" src="{{$frase->image}}" alt="Card image">
+                <div class="card-img-overlay overflow-y-scroll m-4" style="text-shadow: 0px 0px 4px #000000;">
+                    <h5 class="card-title fw-bolder mb-2">{{$frase->text}}</h5>
+                    <p class="card-text m-0">{{$frase->author}}</p>
+                </div>
+                
+                <div class="card-img-overlay overflow-y-scroll m-4 d-flex align-items-end justify-content-center">
+                    <ul class="nav nav-pills gap-2">
+                        <li class="nav-item" style="shadow: 0px 0px 4px #000000;">
+                            <a class="btn btn-light" style="color: #9121DB">Add to Slider</a>
+                        </li>
+                        <li class="nav-item" style="shadow: 0px 0px 4px #000000;">
+                            <a href="{{ url('/frase/'.$frase->id.'/edit') }}" class="btn btn-outline-light" style="color: white; text-shadow: 0px 0px 4px #000000;">Update</a>
+                        </li>
+                        <li class="nav-item" style="shadow: 0px 0px 4px #000000;">
+                            <form action="{{ url('/frase/'.$frase->id) }}" method="post">
+                                @csrf
+                                {{ method_field('delete') }}
+                                <input type="submit"  onclick="return confirm('Please confirm deletion.')" class="btn btn-primary" value="Delete">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+
+                    
+            </div>
+            @endforeach 
         </div>
-        <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-            <a type="button" class="btn btn-outline-dark">Add to Slider</a>
-            <a type="button" class="btn btn-outline-dark">Edit</a>
-            <a type="button" class="btn btn-outline-dark">Delete</a>
-          </div>
-    </div>
-
-    @endforeach 
-    {{ $frases->links('pagination::bootstrap-4') }}
-    
+    </main>
 </div>
-</main>
+
+<div class="container d-flex mt-4 justify-content-center">
+    {{ $frases->links('pagination::bootstrap-4') }}
+</div>
 @endsection

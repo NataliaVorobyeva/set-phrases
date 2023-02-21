@@ -1,64 +1,37 @@
 @extends('layouts.template')
 
 @section('content')
-<ul class="nav nav-pills">
-    <li class="nav-item">
-      <a class="nav-link active" aria-current="page" href="#">Librería de frases</a>
-    </li>
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Mis Frases</a>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Mis Likes</a></li>
-      </ul>
-    </li>
-  </ul>
-    <div class="container-md d-flex justify-content-around">
-        <div class="card text-white" style="width: 18rem;">
-            <img class="card-img" src="{{URL::asset('/imgs/fondo-exemple.webp')}}" alt="Card image">
-            <div class="card-img-overlay">
-            <h5 class="card-title">Some representative placeholder content for the first slide of the carousel.</h5>
-            <p class="card-text">Author</p>
-            </div>
-            <div class="card-body d-flex justify-content-around">
-                <a href="#" class="btn btn-primary">Borrar</a>
-                <a href="#" class="btn btn-primary">Editar</a>
-            </div>
-        </div>
+@include('partials.carrousel')
+<hr class="featurette-divider">
 
-        <div class="card text-white" style="width: 18rem;">
-            <img class="card-img" src="{{URL::asset('/imgs/fondo-exemple.webp')}}" alt="Card image">
-            <div class="card-img-overlay">
-            <h5 class="card-title">Some representative placeholder content for the first slide of the carousel.</h5>
-            <p class="card-text">Author</p>
-            </div>
-            <div class="card-body d-flex justify-content-around">
-                <a href="#" class="btn btn-primary">Borrar</a>
-                <a href="#" class="btn btn-primary">Editar</a>
-            </div>
-        </div>
+<div class="d-flex gap-2 pb-3 d-md-flex justify-content-center">
+    <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">Quotes</a>
+    <a href="{{ url('/frase/create') }}" class="btn btn-primary" >Add new quote</a>
+</div>
 
-        <div class="card text-white" style="width: 18rem;">
-            <img class="card-img" src="{{URL::asset('/imgs/fondo-exemple.webp')}}" alt="Card image">
-            <div class="card-img-overlay">
-            <h5 class="card-title">Some representative placeholder content for the first slide of the carousel.</h5>
-            <p class="card-text">Author</p>
-            </div>
-            <div class="card-body d-flex justify-content-around">
-                <a href="#" class="btn btn-primary">Like</a>
-                <a href="#" class="btn btn-primary">Dislike</a>
-            </div>
+<div class="container">
+    
+    @foreach ($frases as $frase)
+            
+    <div class="card text-white pb-4 ">
+        <img class="card-img" src="{{$frase->image}}" alt="Card image">
+        <div class="card-img-overlay">
+            <h5 class="card-title">{{$frase->text}}</h5>
+            <p class="card-text">{{$frase->author}}</p>
         </div>
-
-        <div class="card text-white" style="width: 18rem;">
-            <img class="card-img" src="{{URL::asset('/imgs/fondo-exemple.webp')}}" alt="Card image">
-            <div class="card-img-overlay">
-            <h5 class="card-title">Some representative placeholder content for the first slide of the carousel.</h5>
-            <p class="card-text">Author</p>
-            </div>
-            <div class="card-body d-flex justify-content-around">
-                <a href="#" class="btn btn-primary">Borrar</a>
-                <a href="#" class="btn btn-primary">Editar</a>
-            </div>
+        <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+            <a type="button" class="btn btn-outline-dark">Add to Slider</a>
+            <a href="{{ url('/frase/'.$frase->id.'/edit') }}" class="btn btn-outline-dark">Update</a>
+            <form action="{{ url('/frase/'.$frase->id) }}" method="post">
+                @csrf
+                {{ method_field('delete') }}
+                <input type="submit"  onclick="return confirm('Please confirm deletion.')" class="btn btn-outline-dark" value="Delete">
+            </form>
         </div>
     </div>
+    @endforeach
+</div>
+<div class="container d-flex mt-4 justify-content-center">
+    {{ $frases->links('pagination::bootstrap-4') }}
+</div>
 @endsection

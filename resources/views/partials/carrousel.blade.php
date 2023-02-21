@@ -11,24 +11,24 @@
       <div class="carousel-item active" style="height: 200px">
         <img src="{{URL::asset('/imgs/fondo-exemple.webp')}}" class="d-block w-100" alt="Background image">
           <div class="carousel-caption text-start flex align-content-center justify-content-center" style="text-shadow: 0px 0px 4px #000000;">
-            <h3 class="fw-bolder">Some representative placeholder content for the first slide of the carousel.</h3>
-            <p>Federico Garcia Lorca</p>
+            <h3 class="fw-bolder">“Los grandes actos se componen de pequeñas obras hechas día a día.”</h3>
+            <p>Lao Tzu</p>
           </div>
       </div>
 
       <div class="carousel-item" style="height: 200px">
         <img src="{{URL::asset('/imgs/fondo-exemple.webp')}}" class="d-block w-100" alt="Background image">
           <div class="carousel-caption text-start flex align-content-center justify-content-center" style="text-shadow: 0px 0px 4px #000000;">
-            <h3 class="fw-bolder">Some representative placeholder content for the second slide of the carousel.</h3>
-            <p>Federico Garcia Lorca</p>
+            <h3 class="fw-bolder">“No te dejes intimidar por lo que no sabes. Esa puede ser tu mayor fortaleza y asegúrate de hacer las cosas de manera diferente a todos los demás.”</h3>
+            <p>Sara Blakely</p>
           </div>
       </div>
       
       <div class="carousel-item" style="height: 200px">
         <img src="{{URL::asset('/imgs/fondo-exemple.webp')}}" class="d-block w-100" alt="Background image">
           <div class="carousel-caption  text-start flex align-content-center justify-content-center" style="text-shadow: 0px 0px 4px #000000;">
-            <h3 class="fw-bolder">Some representative placeholder content for the third slide of the carousel.</h3>
-            <p>Federico Garcia Lorca</p>
+            <h3 class="fw-bolder">“Haz de cada día tu obra maestra.”</h3>
+            <p>Jhon Wooden</p>
           </div>
       </div>
 
