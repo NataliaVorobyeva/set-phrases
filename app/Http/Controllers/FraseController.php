@@ -84,7 +84,8 @@ class FraseController extends Controller
     public function update(Request $request,$id)
     {
         $datosFrase = request()->except(['_token','_method']);
-        Frase::where('id','=',$id)->update($datosFrase);
+        var_dump('id',' = ',$id);
+        Frase::where('id',' = ',$id)->update($datosFrase);
 
         $frase=Frase::findOrFail($id);
         return view('frase.edit', compact('frase'));
