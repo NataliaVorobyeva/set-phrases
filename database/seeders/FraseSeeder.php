@@ -19,7 +19,6 @@ class FraseSeeder extends Seeder
            'text' => '“Haz de cada día tu obra maestra.”',
            'image' => 'https://tse1.mm.bing.net/th?id=OIP.a5tE-8shRTnFR_tjRdxdogAAAA&pid=Api&P=0',
            'author' => 'Jhon Wooden',
-           
         ]);
         DB::table('frases')->insert([ 
            'text' => '“Los grandes actos se componen de pequeñas obras hechas día a
