@@ -71,7 +71,7 @@ class FraseController extends Controller
     public function edit($id)
     {
         $frase=Frase::findOrFail($id);
-        return view('frase.edit',compact('frase') );
+        return view('frase.edit',compact('frase'));
     }
 
     /**
@@ -87,7 +87,7 @@ class FraseController extends Controller
         Frase::where('id','=',$id)->update($datosFrase);
 
         $frase=Frase::findOrFail($id);
-        return view('frase.edit', compact('frase'));
+        return redirect('/frase/show');
     }
 
     /**

@@ -12,5 +12,6 @@ class Frase extends Model
         'text',
         'image',
         'frase_id',
+        'sliderOn',
     ];
 }

@@ -14,10 +14,17 @@
             </a>
           </li>
           <li>
+           @if ()
             <a href="{{ route('home-user') }}" class="nav-link text-white">
+
+            <a href="{{ route('home-admin') }}" class="nav-link text-white">  
+            @endif
+
+            
               <img src="{{URL::asset('/imgs/dashboard.svg')}}" alt="logo" class="bi d-block mx-auto mb-1" width="24" height="24">
               Dashboard
             </a>
+
           </li>
         </ul> 
       </div>

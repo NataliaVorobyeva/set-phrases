@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('text');
             $table->string('image');
             $table->string('author');
+            $table->integer('sliderOn')->default('0');
             $table->timestamps();
         
         });
