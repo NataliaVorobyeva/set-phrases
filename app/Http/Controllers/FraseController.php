@@ -105,7 +105,7 @@ class FraseController extends Controller
     public function addSlider($id)
     {
         $frase=Frase::findOrFail($id);
-        $frase->sliderOn='1';
+        $frase->sliderOn=1;
         $frase->save();
         return redirect('/frase/show');
     }

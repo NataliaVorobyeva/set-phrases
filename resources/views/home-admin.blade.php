@@ -22,7 +22,7 @@
 
         <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
 
-            <form action="{{ url('/frase/'.$frase->id) }}" method="patch">
+            <form action="{{ url('/frase/'.$frase->id) }}" method="head" name="sliderOn">
                 @csrf
                 {{ method_field('addSlider') }}
                 <input type="submit"  onclick="return confirm('Phrase will be added to slider.')" class="btn btn-outline-dark" value="Add to Slider">

@@ -25,7 +25,7 @@
                     <ul class="nav nav-pills gap-2">
                         <li class="nav-item" style="shadow: 0px 0px 4px #000000;">
                         
-                            <form action="{{ url('/frase/'.$frase->id) }}" method="post">
+                            <form action="{{ url('/frase/'.$frase->id) }}" method="head" name="sliderOn">
                                 @csrf
                                 {{ method_field('addSlider') }}
                                 <input type="submit"  onclick="return confirm('Phrase will be added to slider.')" class="btn btn-light" style="color: #9121DB" value="Add to Slider">
