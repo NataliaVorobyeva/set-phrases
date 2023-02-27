@@ -18,6 +18,7 @@
               <img src="{{URL::asset('/imgs/dashboard.svg')}}" alt="logo" class="bi d-block mx-auto mb-1" width="24" height="24">
               Dashboard
             </a>
+
           </li>
         </ul> 
       </div>

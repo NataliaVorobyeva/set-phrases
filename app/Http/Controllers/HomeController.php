@@ -17,6 +17,7 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+        $this->middleware('isAdmin');
     }
 
     /**
@@ -28,6 +29,12 @@ class HomeController extends Controller
     {
         $frases = Frase::get()->toQuery()->paginate(9);
         return view('home-user', ['frases' => $frases]);
+    }
+
+    public function indexAdmin()
+    {
+        $frases = Frase::get()->toQuery()->paginate(9);
+        return view('home-admin', ['frases' => $frases]);
     }
 
 }
