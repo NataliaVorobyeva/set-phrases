@@ -19,9 +19,18 @@
             <h5 class="card-title">{{$frase->text}}</h5>
             <p class="card-text">{{$frase->author}}</p>
         </div>
+
         <div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
-            <a type="button" class="btn btn-outline-dark">Add to Slider</a>
-            <a href="{{ url('/frase/'.$frase->id.'/edit') }}" class="btn btn-outline-dark">Update</a>
+
+            <form action="{{ url('/frase/'.$frase->id) }}" method="patch">
+                @csrf
+                {{ method_field('addSlider') }}
+                <input type="submit"  onclick="return confirm('Phrase will be added to slider.')" class="btn btn-outline-dark" value="Add to Slider">
+            </form>
+            
+            <a href="{{ url('/frase/'.$frase->id.'/edit') }}" class="btn btn-outline-dark">Edit</a>
+            
+            
             <form action="{{ url('/frase/'.$frase->id) }}" method="post">
                 @csrf
                 {{ method_field('delete') }}

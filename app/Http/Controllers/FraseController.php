@@ -101,4 +101,12 @@ class FraseController extends Controller
         Frase::destroy($id);
         return redirect('/frase/show');
     }
+
+    public function addSlider($id)
+    {
+        $frase=Frase::findOrFail($id);
+        $frase->sliderOn='1';
+        $frase->save();
+        return redirect('/frase/show');
+    }
 }

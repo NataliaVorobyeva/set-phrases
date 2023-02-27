@@ -17,7 +17,7 @@ Route::get('/', [FraseController::class, 'index'])->name('welcome');
 Route::get('/home', [HomeController::class, 'index'])->name('home-user')->middleware('auth');
 //Route::get('/home', [HomeController::class, 'index'])->name('home-admin')->middleware('isAdmin');
 
-Route::get('/user/like', [LikeController::class, 'create'])->name('like');
+//Route::get('/user/like', [LikeController::class, 'create'])->name('like');
 
 
 // Para generar rutas automáticas, después en terminar hacer php artisan route:list para ver las que se generaron
