@@ -14,10 +14,25 @@
             </a>
           </li>
           <li>
-            <a href="{{ route('home-user') }}" class="nav-link text-white">
-              <img src="{{URL::asset('/imgs/dashboard.svg')}}" alt="logo" class="bi d-block mx-auto mb-1" width="24" height="24">
-              Dashboard
-            </a>
+
+            @if(Auth::check() && Auth::user()->role=='1')
+              <a href="{{ route('dashAdmin') }}" class="nav-link text-white">
+                <img src="{{URL::asset('/imgs/dashboard.svg')}}" alt="logo" class="bi d-block mx-auto mb-1" width="24" height="24">
+                Dashboard
+              </a>
+
+            @elseif(Auth::check() && Auth::user()->role=='0')
+              <a href="{{ route('home-user') }}" class="nav-link text-white">
+                <img src="{{URL::asset('/imgs/dashboard.svg')}}" alt="logo" class="bi d-block mx-auto mb-1" width="24" height="24">
+                Dashboard
+              </a>
+          
+            @else
+              <a href="{{ route('login') }}" class="nav-link text-white">
+                <img src="{{URL::asset('/imgs/dashboard.svg')}}" alt="logo" class="bi d-block mx-auto mb-1" width="24" height="24">
+                Dashboard
+              </a>
+            @endif
 
           </li>
         </ul> 
