@@ -59,7 +59,7 @@ class FraseController extends Controller
     public function show()
     {
         $frases = Frase::get()->toQuery()->paginate(8);
-        return view('frase.dash',['frases' => $frases]);
+        return view('home-admin',['frases' => $frases]);
     }
 
     /**
@@ -100,5 +100,15 @@ class FraseController extends Controller
     {
         Frase::destroy($id);
         return redirect('/frase/show');
+    }
+
+    public function addSlider(Request $request,$id)
+    {
+        $datosFrase = request()->except(['_token','_method']);
+        return $datosFrase;
+        //Frase::where('id','=',$id)->update($datosFrase);
+
+        //$frase=Frase::findOrFail($id);
+        //return redirect('/frase/show');
     }
 }
