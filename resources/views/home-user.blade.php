@@ -19,7 +19,7 @@
                 <div class="card-group col-10 col-lg-3 col-md-4 text-white" style="filter: drop-shadow(0px 4px 4px rgba(145, 33, 219, 0.5)); border: 2px solid #9121DB; border-radius: 8px; padding: 0; overflow: hidden;">
                     <img class="card-img w-100" src="{{$frase->image}}" alt="Background image">
                     <div class="card-img-overlay overflow-y-scroll m-4 mt-2" style="text-shadow: 0px 0px 4px #000000;">
-                        <a class="" {{-- onclick="add({{ $exemple->driver_id }});" --}} role="button" > 
+                        <a class="" href="{{ route('home-user',$frase->id) }}" > 
                             <img src="{{URL::asset('/imgs/hearth.svg')}}" alt="logo" class="bi d-block mx-auto" width="35" height="35"> 
                         </a>
                         <h5 class="card-title fw-bolder mb-2" >{{$frase->text}}</h5>

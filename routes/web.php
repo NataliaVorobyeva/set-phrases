@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FraseController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LikeController;
 use Illuminate\Support\Facades\Auth;
 
 // Version get del home
@@ -17,7 +18,7 @@ Route::get('/', [FraseController::class, 'index'])->name('welcome');
 Route::get('/home', [HomeController::class, 'index'])->name('home-user')->middleware('auth');
 //Route::get('/home', [HomeController::class, 'index'])->name('home-admin')->middleware('isAdmin');
 
-Route::get('/user/like', [LikeController::class, 'create'])->name('like');
+Route::get('/home/likes', [LikeController::class, 'index'])->name('like');
 
 
 // Para generar rutas automáticas, después en terminar hacer php artisan route:list para ver las que se generaron

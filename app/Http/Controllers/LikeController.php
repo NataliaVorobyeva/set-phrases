@@ -16,7 +16,7 @@ class LikeController extends Controller
     public function index()
     {
         $frases = Like::get()->toQuery()->paginate(8);
-        return view('home-user', ['likes' => $like]);
+        return view('home-user', ['frases' => $frases]);
     }
     /**
      * Show the form for creating a new resource.
@@ -25,7 +25,7 @@ class LikeController extends Controller
      */
     public function create()
     {
-        return view('user.likes');
+        
     }
 
     /**
