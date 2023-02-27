@@ -15,6 +15,10 @@ use Illuminate\Support\Facades\Auth;
 Route::get('/', [FraseController::class, 'index'])->name('welcome');
 
 Route::get('/home', [HomeController::class, 'index'])->name('home-user')->middleware('auth');
+<<<<<<< HEAD
+=======
+//Route::get('/home', [HomeController::class, 'index'])->name('home-admin')->middleware('isAdmin');
+>>>>>>> 6deb90409881d28becd2671586a10ae36e27be29
 
 Route::get('/user/like', [LikeController::class, 'create'])->name('like');
 
