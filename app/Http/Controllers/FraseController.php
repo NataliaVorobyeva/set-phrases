@@ -84,9 +84,8 @@ class FraseController extends Controller
     public function update(Request $request,$id)
     {
         $datosFrase = request()->except(['_token','_method']);
-        Frase::where('id','=',$id)->update($datosFrase);
 
-        $frase=Frase::findOrFail($id);
+        Frase::findOrFail($id)->update($datosFrase);
         return redirect('/frase/show');
     }
 
@@ -99,6 +98,14 @@ class FraseController extends Controller
     public function destroy($id)
     {
         Frase::destroy($id);
+        return redirect('/frase/show');
+    }
+
+    public function addSlider($id)
+    {
+        $frase=Frase::findOrFail($id);
+        $frase->sliderOn=1;
+        $frase->save();
         return redirect('/frase/show');
     }
 }
