@@ -23,12 +23,13 @@ From set-phrases we organize our nice phrases in a web platform with the aim of 
 - Trello
 - Git / GitHub
 - Xampp / Mampp
+- laravel (version 9.x)
 
 ## 💡Technologies
 - HTML
 - CSS
 - Bootstrap
-- PHP
+- PHP (version8.2.0)
 - MySQL
 
 
