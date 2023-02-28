@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->integer('frase_id');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
