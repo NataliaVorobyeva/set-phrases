@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Like;
+use App\Models\Frase;
 use Illuminate\Http\Request;
 
 class LikeController extends Controller
@@ -47,7 +48,8 @@ class LikeController extends Controller
      */
     public function show($id)
     {
-        //
+        $frases = Frases::get($id)->toQuery()->paginate(8);
+        return view('home-user', ['frases' => $frases]);
     }
 
     /**
