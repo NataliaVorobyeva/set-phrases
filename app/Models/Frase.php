@@ -11,7 +11,7 @@ class Frase extends Model
     protected $fillable = [
         'text',
         'image',
-        'frase_id',
+        'author',
         'sliderOn',
     ];
 }
